@@ -24,16 +24,16 @@
  * @template T
  */
 export function filterSplice(array, filter) {
-  const splice = [];
-  for (let i = 0; i < array.length; i++) {
-    const item = array[i];
-    if (!filter(item, i, array)) {
-      splice.push(item);
-      array.splice(i, 1);
-      i--;
+    const splice = [];
+    for (let i = 0; i < array.length; i++) {
+        const item = array[i];
+        if (!filter(item, i, array)) {
+            splice.push(item);
+            array.splice(i, 1);
+            i--;
+        }
     }
-  }
-  return splice;
+    return splice;
 }
 
 /**
@@ -46,10 +46,10 @@ export function filterSplice(array, filter) {
  * @template T
  */
 export function findIndex(array, predicate) {
-  for (let i = 0; i < array.length; i++) {
-    if (predicate(array[i], i, array)) {
-      return i;
+    for (let i = 0; i < array.length; i++) {
+        if (predicate(array[i], i, array)) {
+            return i;
+        }
     }
-  }
-  return -1;
+    return -1;
 }
